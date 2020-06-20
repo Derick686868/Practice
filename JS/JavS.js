@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  $().inputmask("99-9999999");  //static mask
-  $("input[type='phone']").inputmask({"mask": "+7 (999) 999-9999"}); //specifying options
+  $().inputmask("99-9999999");  //mask
+  $("input[type='phone']").inputmask({"mask": "+7 (999) 999-9999"});
 });
 
 function outputUpdate(vol){

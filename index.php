@@ -25,7 +25,7 @@ require_once "Includes/DataBase.php";
 
 			<input class="form-control" type="date" name="date"><br>
 
-			<input class="form-control" type="mail" name="email" placeholder="Адрес электронной почты"><br>
+			<input class="form-control" type="email" name="email" placeholder="Адрес электронной почты"><br>
 
 			<input class="form-control-file" accept=".png,.jpg" type="file" name="file"><br>
 
@@ -41,6 +41,7 @@ require_once "Includes/DataBase.php";
    			data-expired-callback = "capcha_expired"
 			data-theme = "dark">	
 			</div>
+			<br>
 			<button type="submit" name="send" class="rss-button">Отправить</button>
 		</form>
 	</div>

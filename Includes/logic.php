@@ -1,13 +1,5 @@
 <?php
 require_once "Includes/DataBase.php"; 
-
-if ($_POST ['send'] ) {
-	if ( !$_POST ['g-recaptcha-response'])
-		exit('Заполните капчу');
-	var_dump($_POST);
-}
-
-
 $date=$_POST;
 if(isset($date['send'])){
 
@@ -24,6 +16,27 @@ if(isset($date['send'])){
 	if(trim($date['number'] == '')){
 		$errors[] = 'Номер телефона';
 	}
+$error = true;
+$secret = '6LcFSKYZAAAAAOFgdWuRivkItHAA3tdcRk1Tmy--';
+ 
+if (!empty($_POST['g-recaptcha-response'])) {
+	$curl = curl_init('https://www.google.com/recaptcha/api/siteverify');
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, 'secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+	$out = curl_exec($curl);
+	curl_close($curl);
+	
+	$out = json_decode($out);
+	if ($out->success == true) {
+		$error = false;
+	} 
+}    
+ 
+	if ($error) {
+	$errors[]='Ошибка заполнения капчи.';
+
+}
 	if(empty($errors)){
 		echo "Ваши данные отправились";
 		if(isset($date['send'])){
