@@ -1,0 +1,43 @@
+body{
+	background-color: #FFFFE0;
+	max-width: 980px;
+	margin: 0 auto;
+}
+.web-form_wrapper {
+	text-align: center;
+	font-family: Apple Color Emoji;
+	max-width: 500px;
+	border: 8px solid lightgray;
+	border-color: #8FBC8F;
+	background-color: #4682B4;
+	margin-top: 100px;
+	padding: 10px;
+}
+.form-control-file {
+	max-width: 120px;
+	height: 30px;
+}
+.form-input {
+	width: 200px;
+	height: 50px;
+	border: 1px solid rgb(29, 33, 33);
+	margin-top: 10px;
+	outline: none;
+	border-radius: 5px;
+	padding: 10px;
+}
+.form-file{
+	margin-top: 20px;
+	width: 300px;
+}
+.g-recaptcha div{
+	width: 270px;
+	margin: 0 auto;
+	transform: scale(0.95);
+
+}	
+.button {		
+	margin: 10px 0;
+	width: 200px;
+}
+
